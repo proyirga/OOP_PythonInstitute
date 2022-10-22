@@ -17,12 +17,13 @@ def incIntsI(obj):
     attributes with names starting with i,
     and increments them by one.
     """
-    for name in obj.__dict__.keys():
-        if name.startswith('i'):
-            val = getattr(obj, name)
-            if isinstance(val, int):
-                setattr(obj, name, val + 1)
+    for name in obj.__dict__.keys(): # loop scans the object
+        if name.startswith('i'):  # check if a name starts with i is found
+            val = getattr(obj, name)  # passes the attribute name starts with i to val
+            if isinstance(val, int):  # checks if the attribute starts with i is an int
+                setattr(obj, name, val + 1)  # increment attributes starts with i by 1
+
 
 print(obj.__dict__)
-incIntsI(obj)
+incIntsI(obj)  # invoke the function to increment attributes starts with i by 1
 print(obj.__dict__)
